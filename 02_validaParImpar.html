@@ -7,18 +7,18 @@
 
     //ENTRADA
 
-    const nInteiro = Number(prompt(`Informe um número inteiro`));
+     const numero = Number(prompt(`Informe um número inteiro:`));
+    const conta = numero % 2;
+    switch (conta) {
+        case 0:
+            alert(`Seu número é par!`);
+            break;
 
-    switch (nInteiro %2 !== 0){
-        case true:
-            alert(`Impar`);
-        break
-        
+
         default:
-            alert(`Par`);
-            break
+            alert(`Seu número é ímpar!`)
+            break;
     }
-
     //PROCESSAMENTO
 
     

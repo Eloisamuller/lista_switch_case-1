@@ -11,22 +11,66 @@
 
     //ENTRADA
 
-    const numero = Number(prompt(`Informe um numero:`));
-    const segNumero =Number(prompt(`Informe o segundo numero:`));
-    const forma = prompt(`Informe a operaçao que deseja usar:`);
+    const numero1 = Number(prompt(`Informe um número:`));
+    const numero2 = Number(prompt(`Informe outro número:`));
+    const operacao = prompt(`Informe a operação que você deseja usar(Use "*" para multiplicação, "/" para divisão, "+" para adição e "-" para subtração):`);
+    let resultado = 0;
+    let parImpar = "";
+    let positivoNegativo = "";
+    let inteiroDecimal = "";
 
-    //PROCESSAMENTO
-    let resultado=``
-switch (forma) {
-    case "+":
-        resultado = numero + segNumero;
-        break;
-    case "-":
-        resultado = numero - segNumero;
+    switch (operacao) {
+        case "*":
+            resultado= numero1 * numero2;
+            break;
 
-    default:
-        break;
-}
+        case "/":
+            resultado = numero1/numero2;
+            break;
+
+        case "+":
+            resultado = numero1+numero2;
+            break;
+
+        case "-":
+            resultado = numero1-numero2;
+            break;
+
+        default:
+            break;
+    }
+
+    switch (resultado % 2) {
+        case 0:
+            parImpar = "Par";
+            break;
+   
+        default:
+            parImpar = "Ímpar";
+            break;
+    }
+
+    switch (resultado>=0) {
+        case true:
+            positivoNegativo = "Positivo";
+            break;
+        default:
+            positivoNegativo = "Negativo";
+            break;
+    }
+
+    switch (Number.isInteger(resultado)) {
+        case true:
+            inteiroDecimal = "Inteiro";
+            break;
+   
+        default:
+            inteiroDecimal = "Decimal";
+            break;
+    }
+
+    alert(`O resultado da sua operação foi ${resultado}. Seu número final é ${positivoNegativo}, ${inteiroDecimal} e ${parImpar}!`);
+
     
     //SAÍDA
 
